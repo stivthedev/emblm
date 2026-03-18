@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Orbitron', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            margin-bottom: 15px;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-size: 30px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .x-community {
+            background: #000000;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 2px solid #ff6b35;
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        .x-community a {
+            color: #1da1f2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .x-community a:hover {
+            color: #ff6b35;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .embed-section {
+            margin-bottom: 0;
+            background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
+            border: 1px solid #333;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            background: linear-gradient(145deg, #141414 0%, #222 100%);
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15);
+            border: 1px solid #2f2f2f;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .info-card {
+            background: linear-gradient(160deg, #1d1d1d 0%, #2a2a2a 100%);
+            border: 1px solid #3a3a3a;
+            border-left: 4px solid #ff6b35;
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .info-card h3 {
+            margin: 0 0 6px 0;
+            color: #ff6b35;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.4em;
+            color: #e6e6e6;
+        }
+
+        .follow-section {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1b1b1b 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2d2d2d;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(29, 161, 242, 0.15);
+        }
+
+        .follow-section p {
+            margin: 8px 0 12px 0;
+            color: #e6e6e6;
+        }
+
+        .follow-button {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: #1da1f2;
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            border: 2px solid #1da1f2;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .follow-button:hover {
+            background: #ff6b35;
+            border-color: #ff6b35;
+            box-shadow: 0 0 18px rgba(255, 107, 53, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .howto-wrap {
+            margin: 0 0 12px 0;
+            text-align: center;
+        }
+
+        .howto-button {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: transparent;
+            color: #ff6b35;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            border: 2px solid #ff6b35;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .howto-button:hover {
+            background: #ff6b35;
+            color: #000000;
+            box-shadow: 0 0 16px rgba(255, 107, 53, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: linear-gradient(160deg, #151515 0%, #262626 100%);
+            border: 1px solid #3a3a3a;
+            border-left: 4px solid #ff6b35;
+            border-radius: 10px;
+            max-width: 520px;
+            width: 100%;
+            padding: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal h3 {
+            margin: 0 0 8px 0;
+            color: #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .modal p {
+            margin: 0 0 12px 0;
+            line-height: 1.5em;
+            color: #e6e6e6;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .modal-close {
+            background: transparent;
+            color: #ff6b35;
+            border: 2px solid #ff6b35;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: #ff6b35;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .community-section {
+            margin-top: 20px;
+            background: linear-gradient(145deg, #151515 0%, #232323 100%);
+            padding: 22px;
+            border-radius: 8px;
+            border: 1px solid #2f2f2f;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.12);
+        }
+
+        .emblem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .emblem-card {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 14px rgba(255, 107, 53, 0.12);
+        }
+
+        .emblem-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            background: #0a0a0a;
+            border-radius: 6px;
+            border: 1px solid #222;
+        }
+
+        .footer {
+            margin-top: 24px;
+            padding: 18px 10px 28px 10px;
+            text-align: center;
+            background: linear-gradient(90deg, #0f0f0f 0%, #191919 50%, #0f0f0f 100%);
+            border-top: 2px solid #ff6b35;
+            color: #bdbdbd;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .footer a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 700px;
+            border: 2px solid #ff6b35;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+
+        .method-description {
+            background: linear-gradient(145deg, #2a2a2a 0%, #333 100%);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .code-example {
+            background: #1a1a1a;
+            color: #00ff41;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            border: 1px solid #ff6b35;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-placeholder">
+            <img src="image.png" height="120px" width="auto" />
+        </div>
+        <div class="header-content">
+            <h1>PUMP OPS EMBLEM</h1>
+            <div class="subtitle">$EMBLEM</div>
+        </div>
+    </div>
+
+    <div class="x-community">
+        Join our X community: <a href="https://twitter.com/bonkops" target="_blank">@pumpemblem</a>
+    </div>
+
+    <div class="container">
+
+        <!-- Black Ops 2 Emblem Editor -->
+        <div class="howto-wrap">
+            <button class="howto-button" type="button" id="howto-open"
+                aria-label="How to use the Black Ops emblem generator">
+                How To: Black Ops Emblem Generator
+            </button>
+        </div>
+        <div class="embed-section">
+            <div class="iframe-container">
+                <iframe src="https://505e06b2.github.io/Black-Ops-2-Emblem-Editor/" title="Black Ops 2 Emblem Editor"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="info-section" id="about-pump-emblem">
+            <h2>Pump Emblem Intel</h2>
+            <p>
+                Pump Emblem is a community-driven crypto project built for bold branding, meme energy, and clean
+                on-chain
+                identity. The emblem is our signature mark, and this hub showcases the visual core of the project while
+                keeping the momentum focused on growth, hype, and culture.
+            </p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Mission</h3>
+                    <p>Amplify $EMBLEM with a recognizable symbol, strong community presence, and fast-moving culture.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Identity</h3>
+                    <p>Sharp lines, glowing edges, and a bold orange signal to make Pump Emblem instantly memorable.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Community</h3>
+                    <p>Built with creators, traders, and memers who rally around a clean visual and a clear story.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Vibe</h3>
+                    <p>High-energy, futuristic, and unapologetically loud. Pump Emblem doesn’t whisper.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="community-section" id="community-emblems">
+            <h2>Community Emblems</h2>
+            <p>Fresh creations from the $EMBLEM community. Drop yours inside the community to get featured.</p>
+            <div class="emblem-grid">
+                <div class="emblem-card">
+                    <img src="emblems/SCR-20260318-noyd.png" alt="Community emblem 1">
+                </div>
+                <div class="emblem-card">
+                    <img src="emblems/SCR-20260318-nozo.png" alt="Community emblem 2">
+                </div>
+                <div class="emblem-card">
+                    <img src="emblems/SCR-20260318-npfg.png" alt="Community emblem 3">
+                </div>
+                <div class="emblem-card">
+                    <img src="emblems/SCR-20260318-nplg.png" alt="Community emblem 4">
+                </div>
+            </div>
+        </div>
+
+        <div class="follow-section" id="follow-twitter">
+            <h2>Follow Us On Twitter</h2>
+            <p>Join the latest updates, drops, and community moves from Pump Emblem.</p>
+            <a class="follow-button" href="https://twitter.com/bonkops" target="_blank">@pumpemblem</a>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="howto-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal">
+            <h3>How To Use The Emblem Creator</h3>
+            <p>
+                Pick your symbols, stack your layers, and craft a bold look that represents your energy. Build your
+                emblem in the Black Ops editor, then showcase it to the $EMBLEM community.
+            </p>
+            <div class="modal-actions">
+                <button class="modal-close" type="button" id="howto-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const howtoOpen = document.getElementById('howto-open');
+        const howtoClose = document.getElementById('howto-close');
+        const howtoModal = document.getElementById('howto-modal');
+
+        const openHowTo = () => {
+            howtoModal.classList.add('active');
+            howtoModal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeHowTo = () => {
+            howtoModal.classList.remove('active');
+            howtoModal.setAttribute('aria-hidden', 'true');
+        };
+
+        howtoOpen.addEventListener('click', openHowTo);
+        howtoClose.addEventListener('click', closeHowTo);
+        howtoModal.addEventListener('click', (event) => {
+            if (event.target === howtoModal) {
+                closeHowTo();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && howtoModal.classList.contains('active')) {
+                closeHowTo();
+            }
+        });
+    </script>
+
+    <footer class="footer">
+        Pump Emblem • $EMBLEM • Built by the community • <a href="https://twitter.com/bonkops"
+            target="_blank">@pumpemblem</a>
+    </footer>
+</body>
+
+</html>
